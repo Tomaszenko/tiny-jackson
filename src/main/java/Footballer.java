@@ -1,3 +1,4 @@
+import annotations.Ignore;
 import annotations.Property;
 
 public class Footballer {
@@ -7,6 +8,9 @@ public class Footballer {
 
     private String surname;
 
+    private Club club;
+
+    @Ignore
     private double value;
 
     @Property("player_age")
@@ -15,12 +19,13 @@ public class Footballer {
     @Property("all_skills")
     private String[] skills;
 
-    public Footballer(String name, String surname, double value, int age, String[] skills) {
+    public Footballer(String name, String surname, double value, int age, String[] skills, Club club) {
         this.name = name;
         this.surname = surname;
         this.value = value;
         this.age = age;
         this.skills = skills;
+        this.club = club;
     }
 
     public String getName() {
@@ -42,4 +47,6 @@ public class Footballer {
     public String[] getSkills() {
         return skills;
     }
+
+    public Club getClub() { return club; }
 }
